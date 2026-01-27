@@ -1,0 +1,39 @@
+.container-menu-inferior {
+    width: 100%;
+    position: fixed;
+    top: 90%;
+    padding:20px;
+    background-color: var(--branco);
+}
+
+.mae-dos-cards-icones {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.left-nav-bar,.right-nav-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.menu {
+    text-align: center;
+    width: 60px;
+    padding: 10px;
+    background-color: var(--branco);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.46);
+    border-radius: 10px;
+}
+
+.menu-adicionar {
+    text-align: center  ;
+    position: absolute;
+    background-color: var(--branco);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.46);
+    padding: 20px;
+    border-radius: 50%;
+    bottom: 36px;
+}
+
