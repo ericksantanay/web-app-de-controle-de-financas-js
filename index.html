@@ -10,7 +10,7 @@
 <body>
 
 <!--###################### HEADER ##########################################-->    
-   <header> <!--PARTE DO CABEÇALHO-->
+   <header id="cabecalho"> <!--PARTE DO CABEÇALHO-->
 
         <div class="blur-roxo"></div>
         
@@ -129,32 +129,32 @@
 
     <!--################### MAIN ########################################--> 
 
-     <!--################### MENU BAR ########################################--> 
+     <!--################### MENU BAR (ABAS) ########################################--> 
     <article class="container-menu-inferior"> <!--CONTAINER DOS MENUS-->
 
         <div class="mae-dos-cards-icones"> <!--MAE DOS CARDS QUE ESTÃO OS ICONES-->
 
             <div class="left-nav-bar"> <!--LADO ESQUERDO DOS ICONES NAV BAR-->
-                <div class="menu"> <!--MENUS-->
+                <div class="menu" id="menuInicio" onclick="inicioMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone de home.png" alt="Icone de Home">
                 </div> <!--MENUS-->
 
-                <div class="menu"> <!--MENUS-->
+                <div class="menu" id="historico-movimentacao" onclick="historicoMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone historico.png" alt="icone de Historico">
                 </div> <!--MENUS-->
             </div> <!--LADO ESQUERDO DOS ICONES NAV BAR-->
 
-            <div class="menu-adicionar"> <!--MENUS-->
+            <div class="menu-adicionar" id="movimentacao-adicionar" onclick="adicionarMovimentacaoMenu()"> <!--MENUS-->
                 <img src="assets/image/icones home bar/icone adicionar.png" alt="Icone de adicionar">
             </div> <!--MENUS-->
 
             <div class="right-nav-bar"> <!--PARTE DA DIREITA DOS ICONES NAV BAR-->
 
-                <div class="menu"> <!--MENUS-->
+                <div class="menu" onclick="graficoMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone grafico.png" alt="Icone de grafico">
                 </div> <!--MENUS-->
 
-                <div class="menu"> <!--MENUS-->
+                <div class="menu" onclick="perfilMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone de usuario.png" alt="Icone de usuario">
                 </div> <!--MENUS-->
 
@@ -170,6 +170,7 @@
       <script src="assets/js/nomeInicio.js"></script>
       <script src="assets/js/fotoPerfil1.js"></script>
       <script src="assets/js/movimentacao.js"></script>
+      <script src="assets/js/abas.js"></script>
 
 
 </body>
