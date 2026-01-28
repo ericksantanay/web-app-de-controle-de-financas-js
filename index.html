@@ -23,14 +23,13 @@
         <!--###########FOTO DE PERFIL DO USUARIO###########-->
         
         <div class="container-foto-de-perfil"> <!-- DIV FOTO DE PERFIL DO USUARIO-->
+
             <img id="foto-de-perfil" src="assets/image/foto de usuario.png" alt="Foto de Perfil" onclick="adicionarinput()">
+
             <input type="file" id="ifile">
+
             <h1 id="resultado-nome-inicio">Ola, Lucas!</h1>
         </div> <!-- DIV FOTO DE PERFIL DO USUARIO-->
-
-        
-
-
    </header> <!--PARTE DO CABEÇALHO-->
 
    <!--################### HEADER ########################################--> 
@@ -38,6 +37,7 @@
    <!--################### MAIN ########################################--> 
    <main>
 
+    <!--################### PRIMEIRA SEÇÃO ########################################--> 
     <section id="secao-do-home"> <!--SEÇÃO DO MENU-->
 
         <article class="container-cards-home"> <!--CONTAINER DOS CARDS (HOME)-->
@@ -54,6 +54,7 @@
                     <h3 class="titulos">Entradas</h3>
                     <h4>R$ 20,00</h4>
 
+                    <img src="assets/image/icone seta para cima.png" alt="Seta para cima">
 
                 </div> <!--CARD ENTRADAS-->
 
@@ -61,7 +62,7 @@
                 <div id="card-saidas"> <!--CARD SAIDAS-->
                     <h3 class="titulos">Saidas</h3>
                     <h4>R$ 20,00</h4>
-                    <img src="assets/image/icones home bar/" alt="">
+                    <img src="assets/image/seta de gastos.png" alt="Seta para baixo">
 
                 </div> <!--CARD SAIDAS-->
 
@@ -72,6 +73,56 @@
     </section> <!--SEÇÃO DO MENU-->
 
 
+    <!--################### SEGUNDA SEÇÃO ########################################--> 
+    <section> <!---->
+
+    </section> <!---->
+
+
+    <!--################### TERCEIRA SEÇÃO ########################################--> 
+
+    <section id="secao-adicionar-gasto"> <!--SEÇÃO ADICIONAR-->
+        <article class="container-secao-gasto"> <!--CONTAINER DE ADICIONAR GASTO-->
+            <h1>Adicionar Movimentação</h1>
+
+
+            <div class="container-input-gasto"> <!--INPUT COM O NOME DO GASTO-->
+                <input type="text" id="inomegasto" placeholder="Nome do gasto">
+            </div> <!--INPUT COM O NOME DO GASTO-->
+
+
+            <div class="container-input-gasto"> <!--INPUT COM O VALOR DO GASTO-->
+                <input type="text" id="igasto" placeholder="Valor do gasto">
+            </div> <!--INPUT COM O VALOR DO GASTO-->
+
+
+            <div class="container-input-gasto"> <!--INPUT COM O CATEGORIA DO GASTO-->
+                
+                <select id="categoria" name="categoria">
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="alimentacao">🍔 Alimentação</option>
+                    <option value="transporte">🚗 Transporte</option>
+                    <option value="moradia">🏠 Moradia</option>
+                    <option value="lazer">🎮 Lazer</option>
+                    <option value="trabalho">💼 Trabalho</option>
+                    <option value="outros">📦 Outros</option>
+                </select>
+
+            </div> <!--INPUT COM O NOME DO GASTO-->
+
+
+            <div class="container-input-gasto"> <!--INPUT COM O DATA DO GASTO-->
+                <input type="text" id="idata" placeholder="Data do gasto">
+            </div> <!--INPUT COM O NOME DO GASTO-->
+
+            <div class="btn-adicionar"> <!--BOTÃO ADICIONAR-->
+                <button class="btn-add" onclick="adicionarMovimentacao()"></button>
+            </div> <!--BOTÃO ADICIONAR-->
+
+
+
+        </article> <!--CONTAINER DE ADICIONAR GASTO-->
+    </section> <!--SEÇÃO ADICIONAR-->
 
    </main>
 

@@ -1,0 +1,99 @@
+/*######## MAIN ########*/
+main {
+    padding: 10px;
+}
+
+#secao-do-home {
+    display: none;/*APAGAR ISSO DEPOIS */
+}
+
+/*######## ARTICLE (CONTAINER DOS CARDS) ########*/
+.container-cards-home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/*######## CARD SALDO ########*/
+.card-saldo {
+    width: 100%;
+    min-height: 127px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--quase-Preto);
+    box-shadow: 1px 1px 5px #202020;
+}
+
+/*######## TITULOS DO SALDO ENTRADA E SAIDAS ########*/
+.titulos {
+    font-family: var(--inter);
+    font-weight: 600;
+    color: var(--cinza);
+    margin-bottom: 20px;
+}
+
+/*######## RESULTADO DO SALDO ########*/
+#resultado-do-saldo {
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--branco);
+}
+
+/*######## CONTAINER DAS ENTRADAS E SAIDAS ########*/
+.container-das-entradas-e-saidas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/*######## CARDS ENTRADA E SAIDAS ########*/
+#card-entradas,#card-saidas {
+    width: 100%;
+    min-height: 130px;
+    padding: 10px;
+    background-color: var(--card-entrada-e-saida);
+    border-radius: 10px;
+    position: relative;
+}
+
+/*######## VALOR DA ENTRADA  ########*/
+#card-entradas > h4 {
+    color: var(--verde);
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/*######## IMAGEM SETA PARA CIMA  ########*/
+#card-entradas > img {
+    width: 25px;
+    position: absolute;
+    left: 80%;
+    bottom: 15px;
+    background-color: var(--verde);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/*######## VALOR DA SAIDA ########*/
+#card-saidas > h4{
+    color: var(--vermelho);
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+/*######## IMAGEM SETA PARA BAIXO ########*/
+#card-saidas > img {
+    width: 25px;
+    position: absolute;
+    left: 75%;
+    bottom: 15px;
+    background-color: var(--vermelho);
+    padding: 5px;
+    border-radius: 5px;
+}
