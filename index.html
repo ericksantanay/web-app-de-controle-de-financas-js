@@ -12,7 +12,7 @@
 <!--###################### HEADER ##########################################-->    
    <header> <!--PARTE DO CABEÇALHO-->
 
-        <div id="blur-roxo"></div>
+        <div class="blur-roxo"></div>
         
 
         <div class="container-img-logo"> <!--DIV COM A LOGO NA ZENVYAX-->
@@ -35,7 +35,7 @@
    <!--################### HEADER ########################################--> 
 
    <!--################### MAIN ########################################--> 
-   <main>
+<main>
 
     <!--################### PRIMEIRA SEÇÃO ########################################--> 
     <section id="secao-do-home"> <!--SEÇÃO DO MENU-->
@@ -82,6 +82,7 @@
     <!--################### TERCEIRA SEÇÃO ########################################--> 
 
     <section id="secao-adicionar-gasto"> <!--SEÇÃO ADICIONAR-->
+        <div class="blur-roxo"></div>
         <article class="container-secao-gasto"> <!--CONTAINER DE ADICIONAR GASTO-->
             <h1>Adicionar Movimentação</h1>
 
@@ -92,7 +93,7 @@
 
 
             <div class="container-input-gasto"> <!--INPUT COM O VALOR DO GASTO-->
-                <input type="text" id="igasto" placeholder="Valor do gasto">
+                <input type="number" id="igasto" placeholder="Valor do gasto">
             </div> <!--INPUT COM O VALOR DO GASTO-->
 
 
@@ -112,11 +113,11 @@
 
 
             <div class="container-input-gasto"> <!--INPUT COM O DATA DO GASTO-->
-                <input type="text" id="idata" placeholder="Data do gasto">
+                <input type="date" id="idata" placeholder="Data do gasto">
             </div> <!--INPUT COM O NOME DO GASTO-->
 
             <div class="btn-adicionar"> <!--BOTÃO ADICIONAR-->
-                <button class="btn-add" onclick="adicionarMovimentacao()"></button>
+                <button class="btn-add" onclick="adicionarMovimentacao()">Adicionar</button>
             </div> <!--BOTÃO ADICIONAR-->
 
 
@@ -124,7 +125,7 @@
         </article> <!--CONTAINER DE ADICIONAR GASTO-->
     </section> <!--SEÇÃO ADICIONAR-->
 
-   </main>
+</main>
 
     <!--################### MAIN ########################################--> 
 

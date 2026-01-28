@@ -16,7 +16,7 @@ header {
 }
 
 /*######## PARTE ROXA NO TOPO DA TELA ########*/
-#blur-roxo {
+.blur-roxo {
     width: 100%;
     height: 15px;
     background-color: var(--roxo);
