@@ -1,5 +1,5 @@
 #secao-adicionar-gasto {
-    margin-top: 20px;
+   padding-top: 10px;
 }
 
 
@@ -15,6 +15,7 @@
     font-family: var(--inter);
     font-weight: bold;
     color: var(--branco);
+    font-size: 25px;
 }
 
 
@@ -54,5 +55,6 @@
     border-radius: 10px;
     color: var(--branco);
     background-color: var(--roxo);
+    border: none;
 }
 
