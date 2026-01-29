@@ -1,3 +1,10 @@
+// Localstorage Saldo
+const saldoSaidaEentradas = JSON.parse(localStorage.getItem('saldoSaidaEentradas')) || []
+
+
+
+
+
 //############ SAIDAS ###############
 // SAIDA DO SALDO 
 const resultadoSaldo = document.getElementById('resultado-do-saldo')
@@ -10,6 +17,8 @@ const resultadoSaidas = document.getElementById('resultado-da-saida')
 
 
 let saltoTotaldaentrada = 0
+
+let indice = 0
 
 
 // FUNÇÃO DE ADICIONAR OS GASTOS ETC
@@ -40,16 +49,24 @@ function adicionarMovimentacao() {
         return
     }
 
+
+    saldoSaidaEentradas.push({
+        nomeGasto: nomeGasto,
+        valor: valorGasto,
+        categoria: categoriaSelect
+    })
+
+    
+
+
+
+
+
     
     // Escolhendo a categoria salario e salvando no localstorage
     if (categoriaSelect === 'Salario') {
+        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(saltoTotaldaentrada))
 
-        localStorage.setItem('salarioUser', JSON.stringify(valorGasto))
-         resultadoSaldo.innerText = valorGasto
-
-        // Entradas 
-        localStorage.setItem('entradasTotal', JSON.stringify(valorGasto))
-        resultadoEntradas.innerText = valorGasto
     }
 
 
@@ -66,39 +83,47 @@ function adicionarMovimentacao() {
    document.getElementById('idata').value = ''
 
 
-    renderizacao()
+    renderizar()
+    atualizarLista()
+    renderizar()
 }
+
+
+const atualizarLista = () => {
+
+
+
+    saldoSaidaEentradas.forEach((item, indice) => {
+
+        resultadoSaldo.innerText = `R$ ${item.valor}`
+
+
+
+    });
+
+renderizar()
+
+}
+
+
 
 
 
 // Função que renderiza o que aparece no html
-const renderizacao = () =>  {
+const renderizar = () =>  {
+
+    let saldoSalvo = JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
+       
+    if (saldoSalvo) {
+         resultadoSaldo.innerText = saldoSalvo
+    }
+
+
+
+
   
-    // Saldo salvo
-    let saldoSalvo = JSON.parse(Number(localStorage.getItem('salarioUser')) || [])
-    
-    const saldoFormatado = saldoSalvo.toLocaleString('pt-br', {
-        style: 'currency',
-        currency: 'BRL'
-    })
-
-    resultadoSaldo.innerText = saldoFormatado
-
-    //
-    let entradasSalvas = JSON.parse(Number(localStorage.getItem('entradasTotal')) || [])
-
-    let contaDasEntradas = saltoTotaldaentrada + entradasSalvas
-
-    let entradasFormatada = contaDasEntradas.toLocaleString('pt-br', {
-        style: 'currency',
-        currency: 'BRL'
-    })
-
-
-
-    resultadoEntradas.innerText = entradasFormatada
 
    
 
 }
-renderizacao()
+renderizar()
