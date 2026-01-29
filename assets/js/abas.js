@@ -23,9 +23,6 @@ function inicioMenu() {
     PrimeiraSecao.style.display = 'block'
     terceiraSecao.style.display = 'none'
     
-
-
-
 }
 
 
