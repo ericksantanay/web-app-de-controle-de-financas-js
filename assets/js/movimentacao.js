@@ -1,9 +1,3 @@
-// LocalStorage 
-const saldoUsuario = JSON.parse(localStorage.getItem('salario'))  || 0
-
-
-
-
 //############ SAIDAS ###############
 // SAIDA DO SALDO 
 const resultadoSaldo = document.getElementById('resultado-do-saldo')
@@ -15,7 +9,7 @@ const resultadoEntradas = document.getElementById('resuldado-da-entrada')
 const resultadoSaidas = document.getElementById('resultado-da-saida')
 
 
-
+let saltoTotaldaentrada = 0
 
 
 // FUNÇÃO DE ADICIONAR OS GASTOS ETC
@@ -24,17 +18,17 @@ function adicionarMovimentacao() {
     let nomeGasto = document.getElementById('inomegasto').value
 
     // INPUT VALOR DO GASTO
-    const valorGasto = document.getElementById('igasto').value
+    const valorGasto = Number(document.getElementById('igasto').value)
 
     // INPUT CATEGORIA
-    const categoriaSelec = document.getElementById('categoria').value
+    let categoriaSelect = document.getElementById('categoria').value
 
     // INPUT DATA DO GASTO
     const dataDoGasto = document.getElementById('idata').value
 
 
     // Fazendo verificação dos campos 
-    if (nomeGasto === '' || valorGasto === '' || categoriaSelec === '' || dataDoGasto === '') {
+    if (nomeGasto === '' ||  categoriaSelect === '' || dataDoGasto === '') {
         alert('Preencha os campos!')
         return
     }
@@ -46,22 +40,65 @@ function adicionarMovimentacao() {
         return
     }
 
-    if (categoriaSelec === 'Salario') {
-        
-        resultadoSaldo.innerText = valorGasto
+    
+    // Escolhendo a categoria salario e salvando no localstorage
+    if (categoriaSelect === 'Salario') {
 
-        localStorage.setItem('salario', JSON.stringify(valorGasto))
+        localStorage.setItem('salarioUser', JSON.stringify(valorGasto))
+         resultadoSaldo.innerText = valorGasto
+
+        // Entradas 
+        localStorage.setItem('entradasTotal', JSON.stringify(valorGasto))
+        resultadoEntradas.innerText = valorGasto
     }
 
 
-    // Zerando os campos após a digitação 
+    //Limpando os campos
+    document.getElementById('inomegasto').value = ''
+
+    
+    document.getElementById('igasto').value = ''
+
+ 
+    document.getElementById('categoria').value = ''
+
+    
+   document.getElementById('idata').value = ''
 
 
-    nomeGasto = document.getElementById('inomegasto').value = ''
+    renderizacao()
+}
+
+
+
+// Função que renderiza o que aparece no html
+const renderizacao = () =>  {
+  
+    // Saldo salvo
+    let saldoSalvo = JSON.parse(Number(localStorage.getItem('salarioUser')) || [])
+    
+    const saldoFormatado = saldoSalvo.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+
+    resultadoSaldo.innerText = saldoFormatado
+
+    //
+    let entradasSalvas = JSON.parse(Number(localStorage.getItem('entradasTotal')) || [])
+
+    let contaDasEntradas = saltoTotaldaentrada + entradasSalvas
+
+    let entradasFormatada = contaDasEntradas.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+
+
+
+    resultadoEntradas.innerText = entradasFormatada
 
    
-    valorGasto = document.getElementById('igasto').value =  ''
-
-
 
 }
+renderizacao()
