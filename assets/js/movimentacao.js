@@ -2,9 +2,6 @@
 const saldoSaidaEentradas = JSON.parse(localStorage.getItem('saldoSaidaEentradas')) || []
 
 
-
-
-
 //############ SAIDAS ###############
 // SAIDA DO SALDO 
 const resultadoSaldo = document.getElementById('resultado-do-saldo')
@@ -16,7 +13,9 @@ const resultadoEntradas = document.getElementById('resuldado-da-entrada')
 const resultadoSaidas = document.getElementById('resultado-da-saida')
 
 
-let saltoTotaldaentrada = 0
+let saldoConta = 0 
+
+let saldoTotaldaentrada = 0
 
 let indice = 0
 
@@ -50,22 +49,19 @@ function adicionarMovimentacao() {
     }
 
 
-    saldoSaidaEentradas.push({
+    let dados = {
         nomeGasto: nomeGasto,
         valor: valorGasto,
         categoria: categoriaSelect
-    })
-
-    
+    }
 
 
-
-
+    saldoSaidaEentradas.push(dados)
 
     
     // Escolhendo a categoria salario e salvando no localstorage
     if (categoriaSelect === 'Salario') {
-        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(saltoTotaldaentrada))
+        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(saldoSaidaEentradas))
 
     }
 
@@ -82,48 +78,57 @@ function adicionarMovimentacao() {
     
    document.getElementById('idata').value = ''
 
-
-    renderizar()
     atualizarLista()
-    renderizar()
+   
 }
 
 
+// Função de que atualiza e renderiza
 const atualizarLista = () => {
+    // Zerando o saldo 
+    saldoConta = 0
 
-
-
+    // Foreach, vai percorrer o array
     saldoSaidaEentradas.forEach((item, indice) => {
 
-        resultadoSaldo.innerText = `R$ ${item.valor}`
+     // Aqui é o item salvo no array
+    let SaldoValor = item.valor
 
+    // Aqui esta acumulando o valor do sqldo
+    saldoConta += SaldoValor
+
+    //Conta para saber quando esta entrando e somando com o que já tem nas entradas 
+    let contaSaida = saldoConta + saldoTotaldaentrada
+
+    //Tranformando em forma BR as entradas
+    let entradasFormato = contaSaida.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+
+
+    // Tranformando em valor BR
+    const saldoFormatado = saldoConta.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL'
+    })
+
+
+    // Mostrando no html
+    // Mostrando o saldo
+    resultadoSaldo.innerText = saldoFormatado
+
+    //Mostrando as entradas
+    resultadoEntradas.innerText = entradasFormato
 
 
     });
 
-renderizar()
+     
 
 }
 
+atualizarLista()
 
 
 
-
-// Função que renderiza o que aparece no html
-const renderizar = () =>  {
-
-    let saldoSalvo = JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
-       
-    if (saldoSalvo) {
-         resultadoSaldo.innerText = saldoSalvo
-    }
-
-
-
-
-  
-
-   
-
-}
-renderizar()
