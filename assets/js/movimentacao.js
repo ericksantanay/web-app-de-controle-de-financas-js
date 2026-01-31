@@ -48,14 +48,14 @@ function adicionarMovimentacao() {
         return
     }
 
-
+    // Dados
     let dados = {
         nomeGasto: nomeGasto,
         valor: valorGasto,
         categoria: categoriaSelect
     }
 
-
+    // Colocando o obj no array
     saldoSaidaEentradas.push(dados)
 
     
