@@ -4,6 +4,7 @@ main {
 }
 
 #secao-do-home {
+     display:  none; /*APAGAR DEPOIS*/
 }
 
 /*######## ARTICLE (CONTAINER DOS CARDS) ########*/

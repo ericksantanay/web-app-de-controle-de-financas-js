@@ -28,7 +28,7 @@
 
             <input type="file" id="ifile">
 
-            <h1 id="resultado-nome-inicio">Ola, Lucas!</h1>
+            <h1 class="resultado-nome-inicio">Ola, Lucas!</h1>
         </div> <!-- DIV FOTO DE PERFIL DO USUARIO-->
    </header> <!--PARTE DO CABEÇALHO-->
 
@@ -125,6 +125,48 @@
         </article> <!--CONTAINER DE ADICIONAR GASTO-->
     </section> <!--SEÇÃO ADICIONAR-->
 
+
+    <!--################### QUARTA SEÇÃO ########################################--> 
+
+
+    <section>
+
+    </section>
+
+
+
+    <!--################### QUINTA SEÇÃO ########################################--> 
+
+    <section id="secao-perfil"> <!--SEÇÃO DO PERFIL-->
+        <article class="container-cards-do-perfil"> <!--CONTAINER MAE DOS ITENS-->
+            <h1>Perfil</h1>
+
+            <div class="foto-de-perfil"> <!--IMAGEM DO PERFIL-->
+                <img src="assets/image/foto de usuario.png" alt="Foto de usuario" onclick="mostrarFoto()">
+                <input type="file" id="ifoto">
+            </div> <!--IMAGEM DO PERFIL-->
+
+
+            <div class="container-nome"> <!--CONTAINER DO NOME-->
+                <h1 class="resultado-nome-perfil">Lucas!</h1>
+            </div> <!--CONTAINER DO NOME-->
+ 
+
+            <div class="container-configuracoes" onclick="editarFoto()"> <!--CONTAINER DA CONFIGURAÇÃO-->
+                <img src="assets/image/icone config.png" alt="Ingrenagem">
+                <h2>Editar Foto</h2>
+            </div> <!--CONTAINER DA CONFIGURAÇÃO-->
+
+
+            <div class="container-configuracoes" onclick="editarNome()"> <!--CONTAINER DA CONFIGURAÇÃO-->
+                <img src="assets/image/icone config.png" alt="Ingrenagem">
+                <h2>Editar Nome</h2>
+            </div> <!--CONTAINER DA CONFIGURAÇÃO-->
+
+        </article> <!--CONTAINER MAE DOS ITENS-->
+    </section> <!--SEÇÃO DO PERFIL-->
+
+
 </main>
 
     <!--################### MAIN ########################################--> 
@@ -171,6 +213,7 @@
       <script src="assets/js/fotoPerfil1.js"></script>
       <script src="assets/js/movimentacao.js"></script>
       <script src="assets/js/abas.js"></script>
+      <script src="assets/js/perfil.js"></script>
 
 
 </body>

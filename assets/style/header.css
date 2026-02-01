@@ -6,6 +6,7 @@ body {
 
 /*######## HEADER ########*/
 header {
+    display:  none; /*APAGAR DEPOIS*/
     width: 100%;
     position: fixed;
     position: sticky;
