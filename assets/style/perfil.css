@@ -1,5 +1,6 @@
 /*SEÇÃO DO PERFIL*/
 #secao-perfil {
+   display: none;
    padding: 10px;
 }
 
