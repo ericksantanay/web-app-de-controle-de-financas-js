@@ -1,0 +1,79 @@
+/**/
+#secao-perfil {
+   padding: 10px;
+}
+
+/**/
+.container-cards-do-perfil {
+    margin-top: 30px;
+}
+
+
+/**/
+.container-cards-do-perfil > h1 {
+    text-align: center;
+    font-family: var(--inter);
+    color: var(--branco);
+}
+
+
+/**/
+.foto-de-perfil {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/**/
+#img-foto-saida {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+
+/**/
+#ifoto {
+    display: none;
+}
+
+
+/*DIV COM O NOME*/
+.container-nome {
+    text-align: center;
+    margin: 30px;
+}
+
+
+/*NOME (H1)*/
+.resultado-nome-perfil {
+    font-family: var(--poppins);
+    color: var(--branco);
+    font-weight: bold;
+}
+
+
+/**/
+.container-configuracoes {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: var(--quase-Preto);
+    margin-bottom: 20px;
+}
+
+
+/**/
+.container-configuracoes > img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/**/
+.container-configuracoes > h2 {
+    font-family: var(--inter);
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 20px;
+}
