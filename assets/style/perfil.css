@@ -1,29 +1,30 @@
-/**/
+/*SEÇÃO DO PERFIL*/
 #secao-perfil {
    padding: 10px;
 }
 
-/**/
+/*ARTICLE COM AS DIVS*/
 .container-cards-do-perfil {
     margin-top: 30px;
 }
 
 
-/**/
+/*TITULO ESCRITO (PERFIL)*/
 .container-cards-do-perfil > h1 {
     text-align: center;
     font-family: var(--inter);
     color: var(--branco);
+    font-weight: 700;
 }
 
 
-/**/
+/*DIV COM A FOTO DE PERFIL DO (PERFIL)*/
 .foto-de-perfil {
     text-align: center;
     margin-top: 30px;
 }
 
-/**/
+/*FOTO DE PERFIL*/
 #img-foto-saida {
     width: 80px;
     height: 80px;
@@ -31,7 +32,7 @@
 }
 
 
-/**/
+/*INPUT FILE*/
 #ifoto {
     display: none;
 }
@@ -46,13 +47,14 @@
 
 /*NOME (H1)*/
 .resultado-nome-perfil {
+    font-size: 25px;
     font-family: var(--poppins);
     color: var(--branco);
-    font-weight: bold;
+    font-weight: 500;
 }
 
 
-/**/
+/*DIV COM A FUNÇÃO DE MUDAR O NOME*/
 .container-configuracoes {
     display: flex;
     gap: 10px;
@@ -63,14 +65,14 @@
 }
 
 
-/**/
+/*ICONE DE INGRENAGEM*/
 .container-configuracoes > img {
     width: 20px;
     height: 20px;
 }
 
 
-/**/
+/*TITULO EDITAR NOME*/
 #editar-o-nome {
     font-family: var(--inter);
     color: var(--branco);
@@ -78,7 +80,7 @@
     font-size: 20px;
 }
 
-/**/
+/*INPUT AONDE O NOME SERA DIGITADI*/
 #inome {
     display: none;
     width: 100%;
@@ -87,7 +89,7 @@
 }
 
 
-/**/
+/*BOTÃO SALVAR*/
 .salvarNome {
     display: none;
     border: none;

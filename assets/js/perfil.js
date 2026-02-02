@@ -90,13 +90,14 @@ function salvarConfiguracao() {
         return
     }
 
-
+    // SALVANDO NO LOCALSTORAGE
     localStorage.setItem('nomeDePerfil', inputNomeValue)
     resultadoNome.innerHTML = inputNomeValue
     resultadoNomeInicio.innerText = `Ola, ${inputNomeValue}`
 
-    renderizacao()
 
+    inputNomeValue = inputNome.value = ''
+    renderizacao()
 }
 
 // FUNÇÃO QUE RENDERIZA O NOME
@@ -104,8 +105,5 @@ function renderizacao() {
     let nomeSalvo = localStorage.getItem('nomeDePerfil')
     resultadoNome.innerHTML = nomeSalvo
     resultadoNomeInicio.innerText = `Ola, ${nomeSalvo}`
-
-
 }
-
 renderizacao()
