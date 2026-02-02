@@ -1,3 +1,7 @@
+// LOCALSTORAGE NOME DO USUARIO PERFIL
+localStorage.getItem('nomeDePerfil')
+
+
 //SAIDAS 
 // SAIDA DA FOTO
 const fotoPerfil = document.getElementById('img-foto-saida')
@@ -16,6 +20,10 @@ const imgEditarNome = document.querySelector('.imagem-config')
 const h2EditarNome = document.getElementById('editar-o-nome') 
 
 
+// ITENS QUE IRÃO RECEBER O DISPLAY BLOCK
+    let inputNome = document.getElementById('inome') // Esse input vai dentro da função porque eu vou pegar o value dele.
+
+    let salvarNome = document.querySelector('.salvarNome') 
 
 
 
@@ -61,6 +69,7 @@ ipFile.addEventListener('change', function() {
 
 //########################## NOME DO PERFIL #####################################
 
+// FUNÇÃO QUE FAZ OS ITENS APARECER
 function editarNome() {
     imgEditarNome.style.display = 'none' 
     h2EditarNome.style.display  = 'none'
@@ -68,3 +77,35 @@ function editarNome() {
     inputNome.style.display = 'block' 
     salvarNome.style.display = 'block'
 }
+
+
+// FUNÇÃO QUE SALVA O NOME
+function salvarConfiguracao() {
+    // INPUT DO NOME (VALUE)
+    let inputNomeValue = inputNome.value
+    
+    // FAZENDO A VERIFICAÇÃO SE O CAMPO ESTA VAZIO
+    if (inputNomeValue ===  '') {
+        alert('Preencha o campo')
+        return
+    }
+
+
+    localStorage.setItem('nomeDePerfil', inputNomeValue)
+    resultadoNome.innerHTML = inputNomeValue
+    resultadoNomeInicio.innerText = `Ola, ${inputNomeValue}`
+
+    renderizacao()
+
+}
+
+// FUNÇÃO QUE RENDERIZA O NOME
+function renderizacao() {
+    let nomeSalvo = localStorage.getItem('nomeDePerfil')
+    resultadoNome.innerHTML = nomeSalvo
+    resultadoNomeInicio.innerText = `Ola, ${nomeSalvo}`
+
+
+}
+
+renderizacao()
