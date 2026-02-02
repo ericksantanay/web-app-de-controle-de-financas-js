@@ -28,7 +28,7 @@
 
             <input type="file" id="ifile">
 
-            <h1 class="resultado-nome-inicio">Ola, Lucas!</h1>
+            <h1 id="resultado-nome-inicio">Ola, Lucas!</h1>
         </div> <!-- DIV FOTO DE PERFIL DO USUARIO-->
    </header> <!--PARTE DO CABEÇALHO-->
 
@@ -153,8 +153,10 @@
  
 
             <div class="container-configuracoes" onclick="editarNome()"> <!--CONTAINER DA CONFIGURAÇÃO-->
-                <img src="assets/image/icone config.png" alt="Ingrenagem">
-                <h2>Editar Nome</h2>
+                <img class="imagem-config" src="assets/image/icone config.png" alt="Ingrenagem">
+                <h2 id="editar-o-nome">Editar Nome</h2>
+                <input type="text"  id="inome">
+                <button class="salvarNome" onclick="salvarConfiguracao()">Salvar</button>
             </div> <!--CONTAINER DA CONFIGURAÇÃO-->
 
         </article> <!--CONTAINER MAE DOS ITENS-->

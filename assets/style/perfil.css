@@ -71,9 +71,31 @@
 
 
 /**/
-.container-configuracoes > h2 {
+#editar-o-nome {
     font-family: var(--inter);
     color: var(--branco);
     font-weight: 600;
     font-size: 20px;
+}
+
+/**/
+#inome {
+    display: none;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+/**/
+.salvarNome {
+    display: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--roxo);
+    color: var(--branco);
+    font-size: 17px;
+    font-family: var(--poppins);
+    font-weight: 600;
 }
