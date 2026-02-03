@@ -1,0 +1,96 @@
+/*SEÇÃO DE GASTOS*/
+#container-historico-de-gasto { 
+    /*display: none;*/
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+/*TITULO HISTORICO DE GASTOS*/
+#container-historico-de-gasto > h1 {
+    text-align: center;
+    font-family: var(--inter);
+    font-weight: bold;
+    color: var(--branco);
+    margin-bottom: 20px;
+}
+
+/*ARTICLE (CONTAINER MAE)*/
+#container-dos-cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*DIV QUE ARMAZENA O LADO DIREITO E ESQUERDO*/
+.cards {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30%;
+    background-color: var(--quase-Preto);
+    border-radius: 10px;
+}
+
+
+/*LADO ESQUERDO DO CARD*/
+.left-card {
+    display: flex;
+    gap: 12px;
+}
+
+
+/*ICONE DA CATEGORIA*/
+.img-categoria {
+    width: 45px;
+    height: 45px;
+}
+
+
+/*DIV COM O NOME DA MOVIMENTAÇÃO E A CATEGORIA*/
+.container-das-saidas-nome-e-categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/*NOME QUE O USUARIO VAI POR NA MOVIMENTAÇÃO*/
+.nome-da-movimentacao {
+    color: var(--branco);
+    font-family: var(--inter);
+    font-weight: 600;
+}
+
+/*É O RESULTADO DA CATEGORA*/
+.resultado-categoria {
+    color: var(--cinza-mais-escuro);
+    font-family: var(--inter);
+    font-weight: 600;
+}
+
+
+/*LADO DIREITO DO CARD (COM VALOR E A DATA)*/
+.right-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*RESULTADO DO VALOR $*/
+.resultado-do-valor {
+    color: var(--vermelho);  /*APAGAR ESSA COR DEPOIS PORQUE EU VOU COLOCAR A COR PELO JS*/
+    font-family: var(--poppins);
+    font-weight: bold;
+}
+
+
+/*RESULTADO  DA DATA*/
+.resultado-data {
+    font-family: var(--inter);
+    font-weight: 600;
+    color: var(--cinza-mais-escuro);
+}
