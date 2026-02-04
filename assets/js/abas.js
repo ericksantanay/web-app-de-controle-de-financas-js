@@ -3,7 +3,7 @@ const header = document.getElementById('cabecalho')
 const PrimeiraSecao = document.getElementById('secao-do-home')
 const terceiraSecao = document.getElementById('secao-adicionar-gasto')
 const secaoPerfil = document.getElementById('secao-perfil')
-
+const historicoMovimentacao = document.getElementById('container-historico-de-gasto')
 
 //SAIDAS DAS CORES 
 const menuInicio = document.getElementById('menuInicio')
@@ -25,6 +25,7 @@ function inicioMenu() {
     PrimeiraSecao.style.display = 'block'
     terceiraSecao.style.display = 'none'
     secaoPerfil.style.display = 'none'
+    historicoMovimentacao.style.display = 'none'
     
 }
 
@@ -34,6 +35,10 @@ function historicoMenu() {
     menuInicio.style.backgroundColor = 'white'
     movimentacaoAdicionar.style.backgroundColor = 'white'
     Perfil.style.backgroundColor = 'white'
+
+
+    historicoMovimentacao.style.display = 'block'
+     terceiraSecao.style.display = 'none'
 }
 
 
@@ -47,6 +52,7 @@ function adicionarMovimentacaoMenu() {
     terceiraSecao.style.display = 'block'
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
+    historicoMovimentacao.style.display = 'none'
     
 
 }
@@ -69,5 +75,6 @@ function perfilMenu() {
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
     terceiraSecao.style.display = 'none'
+    historicoMovimentacao.style.display = 'none'
     
 }

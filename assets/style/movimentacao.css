@@ -82,7 +82,6 @@
 
 /*RESULTADO DO VALOR $*/
 .resultado-do-valor {
-    color: var(--vermelho);  /*APAGAR ESSA COR DEPOIS PORQUE EU VOU COLOCAR A COR PELO JS*/
     font-family: var(--poppins);
     font-weight: bold;
 }
