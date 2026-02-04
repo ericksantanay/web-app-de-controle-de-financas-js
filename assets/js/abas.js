@@ -38,7 +38,9 @@ function historicoMenu() {
 
 
     historicoMovimentacao.style.display = 'block'
-     terceiraSecao.style.display = 'none'
+    terceiraSecao.style.display = 'none'
+    header.style.display = 'none'
+    PrimeiraSecao.style.display = 'none'
 }
 
 

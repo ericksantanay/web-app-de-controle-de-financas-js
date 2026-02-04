@@ -19,19 +19,17 @@ let resultadoHistorico = document.getElementById('container-dos-cards')
 let saidaImagem = document.querySelector('.img-categoria')
 let NomeMovimentacao = document.querySelector('.nome-da-movimentacao')
 let resultadoCategoria = document.querySelector('.resultado-categoria')
-let resultadoValor = document.querySelector('.resultado-do-valor')
 let resuldadoData = document.querySelector('.resultado-data')
 
-
-//SAIDA DA IMAGEM
-let resultadoImagem = document.querySelector('.img-categoria')
 
 
 
 // Acumulador
 let saldoConta = 0 
 
-let saldoTotaldaentrada = 0
+let totalDeEntradas = 0
+
+let totalDeSaidas = 0
 
 
 // FUNÇÃO DE ADICIONAR OS GASTOS ETC
@@ -62,6 +60,8 @@ function adicionarMovimentacao() {
         return
     }
 
+
+
     // Dados
     let dados = {
         nomeGasto: nomeGasto,
@@ -75,46 +75,13 @@ function adicionarMovimentacao() {
     historicoMovimentacaoArray.push(dados)
 
     
+
+    localStorage.setItem('Movimentacao', JSON.stringify(historicoMovimentacaoArray))
+
+
     // Escolhendo a categoria salario e salvando no localstorage
     if (categoriaSelect === 'Salario') {
         localStorage.setItem('saldoSaidaEentradas', JSON.stringify(saldoSaidaEentradas))
-        resultadoValor.style.color = '#16a34a'
-         resultadoImagem.src = 'assets/image/icones historico/mala.png'
-
-    }
-
-    // SE NAO FOR SALARIO É CONSIDERADO GASTO
-    if (categoriaSelect !== 'Salario') {
-        resultadoValor.style.color = '#ef4444'
-    }
-
-    //CONDIÇÃO PARA TROCAR A IMAGEM CONFORME A CATEGORIA
-    //CATEGORIA TRANSPORTE
-    if (categoriaSelect === 'transporte') {
-        resultadoImagem.src = 'assets/image/icones historico/carro.png'
-    }
-
-
-    //CATEGORIA ALIMENTAÇÃO
-    if (categoriaSelect === 'alimentacao') {
-        resultadoImagem.src = 'assets/image/icones historico/hamburguer.png'
-    }
-
-
-    //CATEGORIA MORADIA
-    if (categoriaSelect === 'moradia') {
-        resultadoImagem.src = 'assets/image/icones historico/casa.png'
-    }
-
-     //CATEGORIA LAZER
-    if (categoriaSelect === 'lazer') {
-        resultadoImagem.src = 'assets/image/icones historico/controle de video game.png'
-    }
-
-
-     //CATEGORIA LAZER
-    if (categoriaSelect === 'outros') {
-        resultadoImagem.src = 'assets/image/icones historico/caixa.png'
     }
 
 
@@ -137,64 +104,106 @@ function adicionarMovimentacao() {
 
 // Função de que atualiza e renderiza
 const atualizarLista = () => {
+
     // Zerando o saldo 
     saldoConta = 0
+    totalDeSaidas = 0
+    totalDeEntradas = 0
+
+    resultadoHistorico.innerHTML = ''
+
 
     // Foreach, vai percorrer o array
-    saldoSaidaEentradas.forEach((item, indice) => {
+    saldoSaidaEentradas.forEach(item => {
 
-        // Aqui é o item salvo no array
-        let SaldoValor = item.valor
+        // SE A CATEGORIA FOR IGUAL A SALARIO EU ADICIONO O SALDO
+        if (item.categoria ===  'Salario') {
 
-        // Aqui esta acumulando o valor do saldo
-        saldoConta += SaldoValor
+            // Aqui esta acumulando o valor do saldo
+            saldoConta += item.valor
+            totalDeEntradas += item.valor
 
-        //Conta para saber quando esta entrando e somando com o que já tem nas entradas 
-        let contaSaida = saldoConta + saldoTotaldaentrada
+            // Tranformando o (saldo) em valor BR
+            const saldoFormatado = saldoConta.toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL'
+            })
 
-        //Tranformando em forma BR as entradas
-        let entradasFormato = contaSaida.toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL'
-        })
-
-
-        // Tranformando em valor BR
-        const saldoFormatado = saldoConta.toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL'
-        })
+             // Mostrando o saldo
+            resultadoSaldo.innerText = saldoFormatado
 
 
-        // Mostrando no html
-        // Mostrando o saldo
-        resultadoSaldo.innerText = saldoFormatado
+            //AQUI EU ACUMULO O TOTAL DE ENTRADAS
+            //Tranformando em forma BR as (entradas)
+            let entradasFormato = totalDeEntradas.toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL'
+            })
 
-        //Mostrando as entradas
-        resultadoEntradas.innerText = entradasFormato
+            //Mostrando as entradas
+            resultadoEntradas.innerText = entradasFormato
+        }
 
+
+
+
+        //########################################################
+        // SE A CATEGORIA FOR DIFERENTE DE SALARIO  DIMINUIO O SALDO 
+        if (item.categoria !== 'Salario') {
+            //CONTA PARA DIMINUIR O SALDO CONFORME O GASTO
+            
+            saldoConta -= item.valor
+            totalDeSaidas += item.valor
+            
+            let saldoFormatoBR = saldoConta.toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL'
+            })
+
+
+            let saidaFormatoBR = totalDeSaidas.toLocaleString('pt-br', {
+                style: 'currency',
+                currency: 'BRL'
+            })
+
+            resultadoSaldo.innerText = saldoFormatoBR
+            resultadoSaidas.innerText = saidaFormatoBR
+        }
 
     });
     //
 
-    //ForEach do historico
 
+
+    //ForEach do historico
     historicoMovimentacaoArray.forEach(item => {
-        resultadoHistorico += 
+        resultadoHistorico.innerHTML += 
         `   
             <div class="cards"> 
                 <div class="left-card">
-                    <img class="img-categoria" src="assets/image/icones historico/casa.png" alt="ICONE DA MOVIMENTACAO">
+                    <img class="img-categoria" 
+     src="${
+        item.categoria === 'Salario' ? 'assets/image/icones historico/mala.png' :
+        item.categoria === 'transporte' ? 'assets/image/icones historico/carro.png' :
+        item.categoria === 'alimentacao' ? 'assets/image/icones historico/hamburguer.png' :
+        item.categoria === 'moradia' ? 'assets/image/icones historico/casa.png' :
+        item.categoria === 'lazer' ? 'assets/image/icones historico/controle de video game.png' :
+        'assets/image/icones historico/caixa.png'
+     }"
+     alt="ICONE DA MOVIMENTACAO">
+
+
+
                     <div class="container-das-saidas-nome-e-categoria">
-                        <h2 class="nome-da-movimentacao">${}</h2>
-                        <h3 class="resultado-categoria">${}</h3>
+                        <h2 class="nome-da-movimentacao">${item.nomeGasto}</h2>
+                        <h3 class="resultado-categoria">${item.categoria}</h3>
                     </div>
                 </div>
 
 
                 <div class="right-card">
-                    <p class="resultado-do-valor">${}</p>
-                    <p class="resultado-data">${}</p>
+                    <p class="resultado-do-valor" style="color: ${item.categoria === 'Salario' ? 'green' : 'red'}">R$ ${item.valor.toFixed(2)}</p>
+                    <p class="resultado-data">${item.data}</p>
                 </div>
 
             </div>
@@ -204,10 +213,11 @@ const atualizarLista = () => {
     });
 
      
-
+    JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
 }
 
 atualizarLista()
 
 
 
+// AGORA É SÓ EU SALVAR LO LOCALSTORAGE E ATUALIZAR
