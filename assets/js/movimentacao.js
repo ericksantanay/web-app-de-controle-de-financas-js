@@ -94,6 +94,29 @@ function adicionarMovimentacao() {
 }
 
 
+//########################### GRAFICO ########################
+
+const graficoFinanceiro = new Chart(grafico, {
+  type: 'bar',
+  data: {
+    labels: ['Gastos', 'Saldo'],
+    datasets: [{
+      label: 'Resumo financeiro',
+      data: [0, 0], // começa zerado
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+})
+
+
+
 // Função de que atualiza e renderiza
 const atualizarLista = () => {
 
@@ -207,30 +230,25 @@ const atualizarLista = () => {
         `
     });
 
+
+
+
     //BUSCANDO O QUE TEM SALVO NO LOCAL STORAGE
     JSON.parse(localStorage.getItem('Movimentacao'))
+
+    graficoFinanceiro.data.datasets[0].data = [
+  totalDeSaidas,
+  saldoConta
+]
+
+graficoFinanceiro.update()
+
 }
 //Renderiza logo quando carrega
 atualizarLista()
 
 
 
-//########################### GRAFICO ########################
-  new Chart(grafico, {
-    type: 'bar',
-    data: {
-      labels: ['Gastos', 'Saldo'],
-      datasets: [{
-        label: 'Gastos',
-        data: [totalDeSaidas, saldoConta],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+
+
+
