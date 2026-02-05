@@ -1,9 +1,10 @@
 .container-menu-inferior {
     width: 100%;
+    height: max-content;
     position: fixed;
-    position: sticky;
-    top: 90%;
-    padding:10px;
+    top: 91%;
+    padding: 10px;
+    bottom: 0;
     background-color: var(--branco);
 }
 
@@ -22,6 +23,7 @@
 .menu {
     text-align: center;
     width: 60px;
+    height: max-content;
     padding: 10px;
     background-color: var(--branco);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.46);

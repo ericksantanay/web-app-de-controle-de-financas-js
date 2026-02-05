@@ -1,8 +1,9 @@
 /*SEÇÃO DE GASTOS*/
 #container-historico-de-gasto { 
+    height: 100vh;
     display: none;
     margin-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 /*TITULO HISTORICO DE GASTOS*/

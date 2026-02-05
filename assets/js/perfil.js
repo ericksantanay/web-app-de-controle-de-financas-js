@@ -1,5 +1,5 @@
 // LOCALSTORAGE NOME DO USUARIO PERFIL
-localStorage.getItem('nomeDePerfil')
+const nome = localStorage.getItem('nomeDePerfil') 
 
 
 //SAIDAS 
@@ -90,10 +90,12 @@ function salvarConfiguracao() {
         return
     }
 
+    
     // SALVANDO NO LOCALSTORAGE
-    localStorage.setItem('nomeDePerfil', inputNomeValue)
-    resultadoNome.innerHTML = inputNomeValue
+    resultadoNome.innerText = inputNomeValue
     resultadoNomeInicio.innerText = `Ola, ${inputNomeValue}`
+    localStorage.setItem('nomeDePerfil', inputNomeValue)
+    
 
 
     inputNomeValue = inputNome.value = ''
@@ -103,7 +105,12 @@ function salvarConfiguracao() {
 // FUNÇÃO QUE RENDERIZA O NOME
 function renderizacao() {
     let nomeSalvo = localStorage.getItem('nomeDePerfil')
-    resultadoNome.innerHTML = nomeSalvo
-    resultadoNomeInicio.innerText = `Ola, ${nomeSalvo}`
+    
+    if (nomeSalvo) {
+        resultadoNome.innerHTML = nomeSalvo
+        resultadoNomeInicio.innerText = `Ola, ${nomeSalvo}`
+    }
+
+
 }
 renderizacao()

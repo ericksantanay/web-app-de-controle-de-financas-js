@@ -1,0 +1,18 @@
+#container-grafico {
+    display: none;
+    margin-top: 5%;
+}
+
+#container-grafico > h1 {
+    text-align: center;
+    font-family: var(--poppins);
+    font-weight: bold;
+    color: var(--branco);
+    margin-bottom: 15px;
+}
+
+.container-mae-do-grafico {
+    border-radius: 10px;
+    padding: 5px;
+   
+}

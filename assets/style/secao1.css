@@ -4,7 +4,7 @@ main {
 }
 
 #secao-do-home {
-    display: none; 
+    display: block; 
 }
 
 /*######## ARTICLE (CONTAINER DOS CARDS) ########*/

@@ -29,7 +29,7 @@
 
             <input type="file" id="ifile">
 
-            <h1 id="resultado-nome-inicio">Ola, Lucas!</h1>
+            <h1 id="resultado-nome-inicio">Ola, </h1>
         </div> <!-- DIV FOTO DE PERFIL DO USUARIO-->
    </header> <!--PARTE DO CABEÇALHO-->
 
@@ -135,6 +135,7 @@
 
 
     <section id="container-grafico"> <!--GRAFICO DE GASTOS ETC-->
+        <h1>Grafico de Gasto</h1>
         <article class="container-mae-do-grafico"> <!--ARTICLE-->
             <canvas id="grafico1"></canvas>
         </article> <!--ARTICLE-->
@@ -195,11 +196,11 @@
 
             <div class="right-nav-bar"> <!--PARTE DA DIREITA DOS ICONES NAV BAR-->
 
-                <div class="menu" onclick="graficoMenu()"> <!--MENUS-->
+                <div class="menu" id="grafico-menu-cor" onclick="graficoMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone grafico.png" alt="Icone de grafico">
                 </div> <!--MENUS-->
 
-                <div class="menu" onclick="perfilMenu()"> <!--MENUS-->
+                <div class="menu" id="perfilcor" onclick="perfilMenu()"> <!--MENUS-->
                     <img src="assets/image/icones home bar/icone de usuario.png" alt="Icone de usuario">
                 </div> <!--MENUS-->
 
@@ -211,8 +212,6 @@
 
       <!--################### MENU BAR ########################################--> 
 
-
-      <script src="assets/js/nomeInicio.js"></script>
       <script src="assets/js/fotoPerfil1.js"></script>
       <script src="assets/js/movimentacao.js"></script>
       <script src="assets/js/abas.js"></script>

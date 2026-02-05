@@ -4,21 +4,24 @@ const PrimeiraSecao = document.getElementById('secao-do-home')
 const terceiraSecao = document.getElementById('secao-adicionar-gasto')
 const secaoPerfil = document.getElementById('secao-perfil')
 const historicoMovimentacao = document.getElementById('container-historico-de-gasto')
+const secaoGrafico = document.getElementById('container-grafico')
 
 //SAIDAS DAS CORES 
 const menuInicio = document.getElementById('menuInicio')
 const historicMoviment = document.getElementById('historico-movimentacao')
 const movimentacaoAdicionar = document.getElementById('movimentacao-adicionar')
-const Perfil = document.querySelector('.menu')
-
+const Perfil = document.getElementById('perfilcor')
+const graficoMenuCor = document.getElementById('grafico-menu-cor')
 
 menuInicio.style.backgroundColor = '#6d28d9'
 
 function inicioMenu() {
+    
     menuInicio.style.backgroundColor = '#6d28d9'
     historicMoviment.style.backgroundColor = 'white'
     movimentacaoAdicionar.style.backgroundColor = 'white'
     Perfil.style.backgroundColor = 'white'
+    graficoMenuCor.style.backgroundColor =  'white'
 
      // AQUI SAO OS QUE VAO APARECER 
     header.style.display = 'block'
@@ -26,7 +29,7 @@ function inicioMenu() {
     terceiraSecao.style.display = 'none'
     secaoPerfil.style.display = 'none'
     historicoMovimentacao.style.display = 'none'
-    
+    secaoGrafico.style.display = 'none'
 }
 
 
@@ -35,12 +38,14 @@ function historicoMenu() {
     menuInicio.style.backgroundColor = 'white'
     movimentacaoAdicionar.style.backgroundColor = 'white'
     Perfil.style.backgroundColor = 'white'
+    graficoMenuCor.style.backgroundColor =  'white'
 
 
     historicoMovimentacao.style.display = 'block'
     terceiraSecao.style.display = 'none'
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
+    secaoGrafico.style.display = 'none'
 }
 
 
@@ -49,14 +54,33 @@ function adicionarMovimentacaoMenu() {
     historicMoviment.style.backgroundColor = 'white'
     menuInicio.style.backgroundColor = 'white'
     Perfil.style.backgroundColor = 'white'
+    graficoMenuCor.style.backgroundColor =  'white'
 
     
     terceiraSecao.style.display = 'block'
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
     historicoMovimentacao.style.display = 'none'
+    secaoGrafico.style.display = 'none'
+
+}
+
+
+
+function graficoMenu() {
+    graficoMenuCor.style.backgroundColor =  '#6d28d9'
+    historicMoviment.style.backgroundColor = 'white'
+    menuInicio.style.backgroundColor = 'white'
+    movimentacaoAdicionar.style.backgroundColor = 'white'
+    Perfil.style.backgroundColor = 'white'
     
 
+    secaoGrafico.style.display = 'block'
+    secaoPerfil.style.display = 'none'
+    historicoMovimentacao.style.display = 'none'
+    terceiraSecao.style.display = 'none'
+    header.style.display = 'block'
+    PrimeiraSecao.style.display = 'none'
 }
 
 
@@ -64,9 +88,10 @@ function adicionarMovimentacaoMenu() {
 
 function perfilMenu() {
     Perfil.style.backgroundColor = '#6d28d9'
-    movimentacaoAdicionar.style.backgroundColor = '#white'
+    movimentacaoAdicionar.style.backgroundColor = 'white'
     historicMoviment.style.backgroundColor = 'white'
     menuInicio.style.backgroundColor = 'white'
+    graficoMenuCor.style.backgroundColor =  'white'
 
 
 
@@ -78,5 +103,5 @@ function perfilMenu() {
     PrimeiraSecao.style.display = 'none'
     terceiraSecao.style.display = 'none'
     historicoMovimentacao.style.display = 'none'
-    
+    secaoGrafico.style.display = 'none'
 }
