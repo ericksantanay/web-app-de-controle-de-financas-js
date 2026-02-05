@@ -6,22 +6,23 @@ const FILES_TO_CACHE = [
   './manifest.json',
 
   // CSS
-  './style/main.css',
-  './style/root.css',
-  './style/header.css',
-  './style/menus.css',
-  './style/adicionar.css',
-  './style/movimentacao.css',
-  './style/perfil.css',
-  './style/grafico.css',
-  './style/secao1.css',
+  './assets/style/main.css',
+  './assets/style/root.css',
+  './assets/style/header.css',
+  './assets/style/menus.css',
+  './assets/style/adicionar.css',
+  './assets/style/movimentacao.css',
+  './assets/style/perfil.css',
+  './assets/style/grafico.css',
+  './assets/style/secao1.css',
 
   // JS
-  './js/abas.js',
-  './js/fotoPerfil1.js',
-  './js/movimentacao.js',
-  './js/perfil.js'
+  './assets/js/abas.js',
+  './assets/js/fotoPerfil1.js',
+  './assets/js/movimentacao.js',
+  './assets/js/perfil.js'
 ]
+
 
 
 

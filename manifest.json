@@ -8,12 +8,12 @@
   "description": "Aplicativo de controle financeiro pessoal",
   "icons": [
     {
-      "src": "assets/icons/icon-192.png",
+      "src": "assets/image/Capa192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon-512.png",
+      "src": "assets/image/Capa512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
