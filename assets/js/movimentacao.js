@@ -211,20 +211,18 @@ const atualizarLista = () => {
                 </div>
 
             </div>
-
         `
-
     });
 
-     
+    //BUSCANDO O QUE TEM SALVO NO LOCAL STORAGE
     JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
 }
+//Renderiza logo quando carrega
 atualizarLista()
 
 
+
 //########################### GRAFICO ########################
-
-
   new Chart(grafico, {
     type: 'bar',
     data: {
