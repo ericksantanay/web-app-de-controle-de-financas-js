@@ -15,15 +15,6 @@ const graficoMenuCor = document.getElementById('grafico-menu-cor')
 
 menuInicio.style.backgroundColor = '#6d28d9'
 
-    function esconderTudo() {
-  header.style.display = 'none'
-  PrimeiraSecao.style.display = 'none'
-  terceiraSecao.style.display = 'none'
-  secaoPerfil.style.display = 'none'
-  historicoMovimentacao.style.display = 'none'
-  secaoGrafico.style.display = 'none'
-}
-esconderTudo()
 
 
 function inicioMenu() {
@@ -70,8 +61,8 @@ function adicionarMovimentacaoMenu() {
 
     
     header.style.display = 'none'
-    PrimeiraSecao.style.display = 'block'
-    terceiraSecao.style.display = 'none'
+    PrimeiraSecao.style.display = 'none'
+    terceiraSecao.style.display = 'block'
     secaoPerfil.style.display = 'none'
     historicoMovimentacao.style.display = 'none'
     secaoGrafico.style.display = 'none'
