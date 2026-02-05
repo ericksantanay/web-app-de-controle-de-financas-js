@@ -42,14 +42,17 @@
 /*LADO ESQUERDO DO CARD*/
 .left-card {
     display: flex;
-    gap: 12px;
+    gap: 5px;
 }
 
 
 /*ICONE DA CATEGORIA*/
 .img-categoria {
-    width: 45px;
-    height: 45px;
+    position: absolute;
+    right: 0;
+    left: 15px;
+    width: 35px;
+    height: 35px;
 }
 
 
@@ -57,12 +60,13 @@
 .container-das-saidas-nome-e-categoria {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 
 /*NOME QUE O USUARIO VAI POR NA MOVIMENTAÇÃO*/
 .nome-da-movimentacao {
+    font-size: 20px;
     color: var(--branco);
     font-family: var(--inter);
     font-weight: 600;
@@ -70,6 +74,7 @@
 
 /*É O RESULTADO DA CATEGORA*/
 .resultado-categoria {
+    font-size: 18px;
     color: var(--cinza-mais-escuro);
     font-family: var(--inter);
     font-weight: 600;
@@ -96,3 +101,5 @@
     font-weight: 600;
     color: var(--cinza-mais-escuro);
 }
+
+
