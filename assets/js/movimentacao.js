@@ -1,6 +1,4 @@
-// Localstorage Saldo
-const saldoSaidaEentradas = JSON.parse(localStorage.getItem('saldoSaidaEentradas')) || []
-
+// Localstorage 
 let historicoMovimentacaoArray = JSON.parse(localStorage.getItem('Movimentacao')) || []
 
 
@@ -26,7 +24,7 @@ let resuldadoData = document.querySelector('.resultado-data')
 const grafico = document.getElementById('grafico1');
 
 
-// Acumulador
+// ACUMULADOR
 let saldoConta = 0 
 
 let totalDeEntradas = 0
@@ -72,18 +70,12 @@ function adicionarMovimentacao() {
     }
 
     // Colocando o obj no array
-    saldoSaidaEentradas.push(dados)
     historicoMovimentacaoArray.push(dados)
 
 
     localStorage.setItem('Movimentacao', JSON.stringify(historicoMovimentacaoArray))
 
-
-    // Escolhendo a categoria salario e salvando no localstorage
-    if (categoriaSelect === 'Salario') {
-        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(saldoSaidaEentradas))
-    }
-
+    //#######################################################################################
 
     //Limpando os campos
     document.getElementById('inomegasto').value = ''
@@ -114,7 +106,7 @@ const atualizarLista = () => {
 
 
     // Foreach, vai percorrer o array
-    saldoSaidaEentradas.forEach(item => {
+    historicoMovimentacaoArray.forEach(item => {
 
         // SE A CATEGORIA FOR IGUAL A SALARIO EU ADICIONO O SALDO
         if (item.categoria ===  'Salario') {
@@ -174,11 +166,9 @@ const atualizarLista = () => {
             resultadoSaldo.innerText = saldoFormatoBR
             resultadoSaidas.innerText = saidaFormatoBR
         }
-
-
-        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(historicoMovimentacaoArray))
+        
     });
-
+    
 
     //########################################################################
 
@@ -218,7 +208,7 @@ const atualizarLista = () => {
     });
 
     //BUSCANDO O QUE TEM SALVO NO LOCAL STORAGE
-    JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
+    JSON.parse(localStorage.getItem('Movimentacao'))
 }
 //Renderiza logo quando carrega
 atualizarLista()
