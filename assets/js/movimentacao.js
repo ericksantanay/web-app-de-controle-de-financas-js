@@ -63,7 +63,6 @@ function adicionarMovimentacao() {
     }
 
 
-
     // Dados
     let dados = {
         nomeGasto: nomeGasto,
@@ -76,7 +75,6 @@ function adicionarMovimentacao() {
     saldoSaidaEentradas.push(dados)
     historicoMovimentacaoArray.push(dados)
 
-    
 
     localStorage.setItem('Movimentacao', JSON.stringify(historicoMovimentacaoArray))
 
@@ -99,15 +97,15 @@ function adicionarMovimentacao() {
     
    document.getElementById('idata').value = ''
 
+
     atualizarLista()
-   
 }
 
 
 // Função de que atualiza e renderiza
 const atualizarLista = () => {
 
-    // Zerando o saldo 
+    // Zerando 
     saldoConta = 0
     totalDeSaidas = 0
     totalDeEntradas = 0
@@ -121,7 +119,7 @@ const atualizarLista = () => {
         // SE A CATEGORIA FOR IGUAL A SALARIO EU ADICIONO O SALDO
         if (item.categoria ===  'Salario') {
 
-            // Aqui esta acumulando o valor do saldo
+            // Aqui esta acumulando o valor do saldo E ENTRADA
             saldoConta += item.valor
             totalDeEntradas += item.valor
 
@@ -153,21 +151,26 @@ const atualizarLista = () => {
         // SE A CATEGORIA FOR DIFERENTE DE SALARIO  DIMINUIO O SALDO 
         if (item.categoria !== 'Salario') {
             //CONTA PARA DIMINUIR O SALDO CONFORME O GASTO
-            
+        
+            //REMOVENDO O SALDO DA CONTA CONFORME O GASTO
             saldoConta -= item.valor
+            //ACUMULANDO O TOTAL DE SAIDAS
             totalDeSaidas += item.valor
+
             
+            // TRANFORMANDO OS NÚMEROS EM FORMA BRL
             let saldoFormatoBR = saldoConta.toLocaleString('pt-br', {
                 style: 'currency',
                 currency: 'BRL'
             })
 
-
+            // TRANFORMANDO OS NÚMEROS EM FORMA BRL
             let saidaFormatoBR = totalDeSaidas.toLocaleString('pt-br', {
                 style: 'currency',
                 currency: 'BRL'
             })
 
+            //SAIDAS PARA O HTML
             resultadoSaldo.innerText = saldoFormatoBR
             resultadoSaidas.innerText = saidaFormatoBR
         }
@@ -175,12 +178,14 @@ const atualizarLista = () => {
 
         localStorage.setItem('saldoSaidaEentradas', JSON.stringify(historicoMovimentacaoArray))
     });
-    //
 
+
+    //########################################################################
 
 
     //ForEach do historico
     historicoMovimentacaoArray.forEach(item => {
+
         resultadoHistorico.innerHTML += 
         `   
             <div class="cards"> 
@@ -195,8 +200,6 @@ const atualizarLista = () => {
         'assets/image/icones historico/caixa.png'
      }"
      alt="ICONE DA MOVIMENTACAO">
-
-
 
                     <div class="container-das-saidas-nome-e-categoria">
                         <h2 class="nome-da-movimentacao">${item.nomeGasto}</h2>
