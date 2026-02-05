@@ -15,6 +15,17 @@ const graficoMenuCor = document.getElementById('grafico-menu-cor')
 
 menuInicio.style.backgroundColor = '#6d28d9'
 
+    function esconderTudo() {
+  header.style.display = 'none'
+  PrimeiraSecao.style.display = 'none'
+  terceiraSecao.style.display = 'none'
+  secaoPerfil.style.display = 'none'
+  historicoMovimentacao.style.display = 'none'
+  secaoGrafico.style.display = 'none'
+}
+esconderTudo()
+
+
 function inicioMenu() {
     
     menuInicio.style.backgroundColor = '#6d28d9'
@@ -41,10 +52,11 @@ function historicoMenu() {
     graficoMenuCor.style.backgroundColor =  'white'
 
 
-    historicoMovimentacao.style.display = 'block'
-    terceiraSecao.style.display = 'none'
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
+    terceiraSecao.style.display = 'none'
+    secaoPerfil.style.display = 'none'
+    historicoMovimentacao.style.display = 'block'
     secaoGrafico.style.display = 'none'
 }
 
@@ -57,9 +69,10 @@ function adicionarMovimentacaoMenu() {
     graficoMenuCor.style.backgroundColor =  'white'
 
     
-    terceiraSecao.style.display = 'block'
     header.style.display = 'none'
-    PrimeiraSecao.style.display = 'none'
+    PrimeiraSecao.style.display = 'block'
+    terceiraSecao.style.display = 'none'
+    secaoPerfil.style.display = 'none'
     historicoMovimentacao.style.display = 'none'
     secaoGrafico.style.display = 'none'
 
@@ -75,12 +88,12 @@ function graficoMenu() {
     Perfil.style.backgroundColor = 'white'
     
 
-    secaoGrafico.style.display = 'block'
-    secaoPerfil.style.display = 'none'
-    historicoMovimentacao.style.display = 'none'
-    terceiraSecao.style.display = 'none'
     header.style.display = 'block'
     PrimeiraSecao.style.display = 'none'
+    terceiraSecao.style.display = 'none'
+    secaoPerfil.style.display = 'none'
+    historicoMovimentacao.style.display = 'none'
+    secaoGrafico.style.display = 'block'
 }
 
 
@@ -98,10 +111,10 @@ function perfilMenu() {
 
 
     // AQUI SAO OS QUE VAO APARECER 
-    secaoPerfil.style.display = 'block'
     header.style.display = 'none'
     PrimeiraSecao.style.display = 'none'
     terceiraSecao.style.display = 'none'
+    secaoPerfil.style.display = 'block'
     historicoMovimentacao.style.display = 'none'
     secaoGrafico.style.display = 'none'
 }
