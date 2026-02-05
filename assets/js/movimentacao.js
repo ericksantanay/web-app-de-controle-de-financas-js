@@ -22,6 +22,8 @@ let resultadoCategoria = document.querySelector('.resultado-categoria')
 let resuldadoData = document.querySelector('.resultado-data')
 
 
+//SAIDA DO GRAFICO
+const grafico = document.getElementById('grafico1');
 
 
 // Acumulador
@@ -170,6 +172,8 @@ const atualizarLista = () => {
             resultadoSaidas.innerText = saidaFormatoBR
         }
 
+
+        localStorage.setItem('saldoSaidaEentradas', JSON.stringify(historicoMovimentacaoArray))
     });
     //
 
@@ -215,9 +219,27 @@ const atualizarLista = () => {
      
     JSON.parse(localStorage.getItem('saldoSaidaEentradas'))
 }
-
 atualizarLista()
 
 
+//########################### GRAFICO ########################
 
-// AGORA É SÓ EU SALVAR LO LOCALSTORAGE E ATUALIZAR
+
+  new Chart(grafico, {
+    type: 'bar',
+    data: {
+      labels: ['Gastos', 'Saldo'],
+      datasets: [{
+        label: 'Gastos',
+        data: [totalDeSaidas, saldoConta],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
